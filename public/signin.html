@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 2</title>
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!--Import materialize.css-->
     <!--below uses min materialize that is better for when we deploy but regular is better for development-->
     <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
     <link href="paralexcss/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="paralexcss/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-
 </head>
 
-
-  <body>
+<body>
     <nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="home.html">Home</a></li>
-        </ul>
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+            </ul>
 
-        <ul id="nav-mobile" class="sidenav">
-          <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
-      </div>
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
     </nav>
 
     <div id="index-banner" class="parallax-container">
-
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center white-text text-lighten-2">Nerds Unite</h1>
+                <h1 class="header center amber-text text-lighten-2">Nerds Unite</h1>
                 <div class="row center">
                     <h5 class="header col s12 light">Sign in to Your Account</h5>
                 </div>
@@ -56,18 +49,14 @@
                                 <label for="password">Password</label>
                             </div>
                         </div>
-
-                        <a class="waves-effect waves-light btn">Sign in</a>
-
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Sign In
+                            <i class="material-icons right">send</i>
+                          </button>
                     </form>
-
                 </div>
-              </div>
-            </form>
-          </div>
-          <br /><br />
+                <br><br>
+            </div>
         </div>
-
         <div class="parallax"><img src="assets/background4.jpg" class="responsive-img" alt="Unsplashed background img 1"></div>
     </div>
 
@@ -86,19 +75,14 @@
                     </ul>
                 </div>
             </div>
-
         </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          Made by
-          <a class="brown-text text-lighten-3" href="http://materializecss.com"
-            >Materialize</a
-          >
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
         </div>
-      </div>
     </footer>
-    <script src=".js/login.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
@@ -110,4 +94,3 @@
 </body>
 
 </html>
-
