@@ -10,8 +10,8 @@
     <!--Import materialize.css-->
     <!--below uses min materialize that is better for when we deploy but regular is better for development-->
     <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
-    <link href="public/paralexcss/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="public/paralexcss/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="paralexcss/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="paralexcss/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
 </head>
 
@@ -34,55 +34,45 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center amber-text text-lighten-2">Nerds Unite</h1>
+                <h1 class="header center white-text text-lighten-2">Nerds Unite</h1>
                 <div class="row center">
                     <h5 class="header col s12 light">Sign in to Your Account</h5>
                 </div>
                 <div class="row">
                     <form class="col s12">
                         <div class="row">
-                            <div class="input-field col s12">
-                                <input id="email" type="email" class="validate">
-                                <label for="email">Email</label>
+                            <div class="input-field col s6 white-text">
+                                <input id="email" class="white-text" type="email" class="validate">
+                                <label for="email" class="white-text">Email</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="password" type="password" class="white-text" class="validate">
+                                <label for="password" class="white-text">Password</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="password" type="password" class="validate">
-                                <label for="password">Password</label>
-                            </div>
-                        </div>
+                        <a class="waves-effect waves-light btn">Sign In</a>
                     </form>
                 </div>
                 <br><br>
             </div>
         </div>
-        <div class="parallax"><img src="assets/background1.jpg" alt="Unsplashed background img 1"></div>
+        <div class="parallax"><img class="responsive-img" src="assets/background4.jpg" alt="Unsplashed background img 1"></div>
     </div>
 
-    <footer class="page-footer amber-lighten-4">
+    <footer class="page-footer">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
                 </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Settings</h5>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
                     <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
                     </ul>
                 </div>
             </div>
@@ -98,8 +88,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="public/paralexjs/materialize.js"></script>
-    <script src="public/paralexjs/init.js"></script>
+    <script src="paralexjs/materialize.js"></script>
+    <script src="paralexjs/init.js"></script>
 
 </body>
 
