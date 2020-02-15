@@ -4,6 +4,7 @@ $(document).ready(function() {
     var passwordInput = $("input#password");
 
     submitBtn.on("click", function(event) {
+        console.log("click")
         event.preventDefault();
         var userData = {
             email: emailInput.val().trim(),
