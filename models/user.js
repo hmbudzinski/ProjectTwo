@@ -1,13 +1,8 @@
-var bcrypt = require("bcryptjs");
+var bcrypt = require('bcryptjs');
 
 module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define("User", {
+    var User = sequelize.define('User', {
         // Giving the User model a name of type STRING
-        userName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -30,6 +25,26 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
+        },
+        fandoms: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        relationship: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        dadJoke: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        cosplay: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        gif: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         }
     });
 
@@ -39,15 +54,19 @@ module.exports = function(sequelize, DataTypes) {
     };
     // Hooks are automatic methods that run during various phases of the User Model lifecycle
     // In this case, before a User is created, we will automatically hash their password
-    User.addHook("beforeCreate", function(user) {
-        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+    User.addHook('beforeCreate', function(user) {
+        user.password = bcrypt.hashSync(
+            user.password,
+            bcrypt.genSaltSync(10),
+            null
+        );
     });
 
     User.associate = function(models) {
         // Associating User with Posts
         // When an User is deleted, also delete any associated Posts
         User.hasMany(models.Profile, {
-            onDelete: "cascade"
+            onDelete: 'cascade'
         });
     };
 
