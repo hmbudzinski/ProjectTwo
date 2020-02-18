@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var submitBtn = $(".btn");
+    var submitBtn = $("form.login");
     var emailInput = $("input#email");
     var passwordInput = $("input#password");
 
@@ -24,12 +24,11 @@ $(document).ready(function() {
         $.post("/api/login", {
                 email: email,
                 password: password
-            })
-            .then(function() {
-                window.location.replace("/profile");
+            }).then(function() {
+                window.location.replace("/profile")
             })
             .catch(function(err) {
                 console.log(err);
             });
-    }
+    };
 });
