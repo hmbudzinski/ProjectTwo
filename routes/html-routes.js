@@ -12,22 +12,22 @@ module.exports = function(app) {
         if (req.user) {
             res.redirect("/profile/:id");
         }
-        res.sendFile(path.join(__dirname, "../public/signup.html"));
+        res.sendFile(path.join(__dirname, "../public/home.html"));
     });
 
-    app.get("/login", function(req, res) {
+    app.get("/signin", function(req, res) {
         // If the user already has an account send them to the members page
         if (req.user) {
             res.redirect("/profile/:id");
         }
         //otherwise send them to the login page
-        res.sendFile(path.join(__dirname, "../public/login.html"));
+        res.sendFile(path.join(__dirname, "../public/signin.html"));
     });
 
     app.get("/signup", function(req, res) {
-        // If the user has an account send them to their profile page
+        // If the user has an account send them to the login page
         if (req.user) {
-            res.redirect("/profile/:id");
+            res.redirect("/signin");
         }
         //otherwise send them to the signup page
         res.sendFile(path.join(__dirname, "../public/signup.html"));
