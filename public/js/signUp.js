@@ -94,4 +94,6 @@ $('#signUp').on('click', function(event) {
     $('#dadJoke').val('');
     $('#cosplay').val('');
     $('#gif').val('');
+
+    window.location.replace("/profile/:id");
 });
