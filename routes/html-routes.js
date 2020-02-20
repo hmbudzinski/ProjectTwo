@@ -29,8 +29,8 @@ module.exports = function(app) {
         if (req.user) {
             res.redirect("/signin");
         }
-        //otherwise send them to the signup page
-        res.sendFile(path.join(__dirname, "../public/signup.html"));
+        //otherwise send them to the profile page
+        res.sendFile(path.join(__dirname, "../public/profile.html"));
     });
 
     app.get("/swipe", isAuthenticated, function(req, res) {
@@ -40,6 +40,14 @@ module.exports = function(app) {
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     app.get("/profile/:id", isAuthenticated, function(req, res) {
+
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        })
         res.sendFile(path.join(__dirname, "../public/profile.html"));
     });
 
