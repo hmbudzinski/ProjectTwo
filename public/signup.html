@@ -64,33 +64,33 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12 black-text">
-                                <div id="fandom">
-                                    <select multiple>
-                                        <option value="" disabled-selected>Choose three</option>
-                                        <option value="1">Harry Potter</option>
-                                        <option value="2">Star Wars</option>
-                                        <option value="3">Lord of the Rings</option>
-                                        <option value="4">Star Trek</option>
-                                        <option value="5">Doctor Who</option>
-                                        <option value="6">Attack on Titan</option>
-                                        <option value="7">Death Note</option>
-                                        <option value="8">Avatar: The Last Airbender</option>
-                                        <option value="9">Pokemon</option>
-                                        <option value="10">Studio Ghibli Films</option>
-                                        <option value="11">X-men</option>
-                                        <option value="12">Naruto</option>
-                                        <option value="13">Legend of Zelda</option>
-                                        <option value="14">Game of Thrones</option>
-                                        <option value="15">Futurama</option>
-                                        <option value="16">Rick & Morty</option>
-                                        <option value="17">Adventure Time</option>
-                                        <option value="18">DC Comics</option>
-                                        <option value="19">Marvel Comics</option>
-                                        <option value="20">Tim Burton Films</option>
-                                        <option value="21">Disney Films</option>
-                                        <option value="22">Nintendo</option>
-                                    </select>
-                                </div>
+                                <!-- <select id="fandom"> -->
+                                <select id="fandom" multiple>
+                                    <option value="" disabled-selected>Choose three</option>
+                                    <option value="Harry Potter">Harry Potter</option>
+                                    <option value="Star Wars">Star Wars</option>
+                                    <option value="Lord of the Rings">Lord of the Rings</option>
+                                    <option value="Star Trek">Star Trek</option>
+                                    <option value="Doctor Who">Doctor Who</option>
+                                    <option value="Attack on Titan">Attack on Titan</option>
+                                    <option value="Death Note">Death Note</option>
+                                    <option value="Avatar: The Last Airbender">Avatar: The Last Airbender</option>
+                                    <option value="Pokemon">Pokemon</option>
+                                    <option value="Studio Ghibli Films">Studio Ghibli Films</option>
+                                    <option value="X-men">X-men</option>
+                                    <option value="Naruto">Naruto</option>
+                                    <option value="Legend of Zelda">Legend of Zelda</option>
+                                    <option value="Game of Thrones">Game of Thrones</option>
+                                    <option value="Futurama">Futurama</option>
+                                    <option value="Rick & Morty">Rick & Morty</option>
+                                    <option value="Adventure Time">Adventure Time</option>
+                                    <option value="DC Comics">DC Comics</option>
+                                    <option value="Marvel Comics">Marvel Comics</option>
+                                    <option value="Tim Burton Films">Tim Burton Films</option>
+                                    <option value="Disney Films">Disney Films</option>
+                                    <option value="Nintendo">Nintendo</option>
+                                </select>
+                                <!-- </div> -->
                                 <label>Choose your favorite three Fandoms!</label>
                             </div>
                         </div>
@@ -99,37 +99,37 @@
                             <p>What are you looking for?</p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group1" type="radio" data-name="Relationship" checked />
                                     <span>Relationship</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group1" type="radio" data-name="Marriage" />
                                     <span>Marriage</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group1" type="radio" data-name="Rebound" />
                                     <span>Rebound</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group1" type="radio" data-name="Friends" />
                                     <span>Friends</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
-                                    <span>Procreation</span>
+                                    <input name="group1" type="radio" data-name="Laser Tag Partner" />
+                                    <span>Laser Tag Partner</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group1" type="radio" data-name="Star Wars and Cuddle" />
                                     <span>Star Wars and Cuddle</span>
                                 </label>
                             </p>
@@ -139,19 +139,23 @@
                             <p>Pick your favorite Dad Joke:</p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group2" type="radio"
+                                        data-name="How do you make a Kleenex dance? Put a little boogie in it!"
+                                        checked />
                                     <span>"How do you make a Kleenex dance? Put a little boogie in it!"</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group2" type="radio"
+                                        data-name="What time did the man go to the dentist? Tooth hurt-y." />
                                     <span>"What time did the man go to the dentist? Tooth hurt-y."</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group2" type="radio"
+                                        data-name="What is Beethoven's favorite fruit? A ba-na-na-na." />
                                     <span>"What is Beethoven's favorite fruit? A ba-na-na-na."</span>
                                 </label>
                             </p>
@@ -168,13 +172,14 @@
                             <p>How do you pronounce GIF?</p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group3" type="radio" data-name="Gif (how it is supposed to be)"
+                                        checked />
                                     <span>Gif (how it is supposed to be)</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="group1" type="radio" checked />
+                                    <input name="group3" type="radio" data-name="Jif (like the Peanut Butter)" />
                                     <span>Jif (like the Peanut Butter)</span>
                                 </label>
                             </p>

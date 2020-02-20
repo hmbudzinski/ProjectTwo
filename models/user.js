@@ -43,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         gif: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         }
     });
