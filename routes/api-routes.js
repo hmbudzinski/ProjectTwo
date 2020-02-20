@@ -17,8 +17,15 @@ module.exports = function(app) {
     // otherwise send back an error
     app.post("/api/signup", function(req, res) {
         db.User.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
                 email: req.body.email,
-                password: req.body.password
+                password: req.body.password,
+                fandoms: req.body.fandoms,
+                relationship: req.body.relationship,
+                dadJoke: req.body.dadJoke,
+                cosplay: req.body.cosplay,
+                gif: req.body.gif
             })
             .then(function() {
                 res.redirect(307, "/api/signin");
