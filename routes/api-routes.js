@@ -28,7 +28,7 @@ module.exports = function(app) {
                 gif: req.body.gif
             })
             .then(function() {
-                res.redirect(307, "/api/signin");
+                res.redirect("/api/profile");
             })
             .catch(function(err) {
                 res.status(401).json(err);
