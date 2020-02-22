@@ -41,7 +41,7 @@ module.exports = function(app) {
     });
 
     //route for finding one user based off id 
-    app.get("/api/profile/:id", function(req, res) {
+    app.get("/api/profile/:id?", function(req, res) {
         db.User.findOne({
             where: {
                 id: req.params.id
