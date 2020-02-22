@@ -1,27 +1,30 @@
 $(document).ready(function() {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
-    $.get("/api/user_data").then(function(data) {
+    $.get('/profile/:id').then(function(data) {
         console.log(data);
-        $("#first-name").empty();
-        $("#first-name").text(data.firstName);
+        $('#first-name').empty();
+        $('#first-name').text(data.firstName);
 
-        $("#last-name").empty();
-        $("#last-name").text(data.lastName);
+        $('#last-name').empty();
+        $('#last-name').text(data.lastName);
 
-        $("#email").empty();
-        $("#email").text(data.email);
+        $('#email').empty();
+        $('#email').text(data.email);
 
-        $("#dad-joke").empty();
-        $("#dad-joke").text(data.dadJokes);
+        $('#fandom').empty();
+        $('#fandom').text(data.fandoms);
 
-        $("#fandom").empty();
-        $("#fandom").text(data.fandom);
+        $('#relationship').empty();
+        $('#relationship').text(data.relationship);
 
-        $("#is-introvert").empty();
-        $("#is-introvert").text(data.isIntrovert);
+        $('#dad-joke').empty();
+        $('#dad-joke').text(data.dadJoke);
 
-        $("#pronounce-gif").empty();
-        $("#pronounce-gif").text(data.pronunceGif);
+        $('#cosplay').empty();
+        $('#cosplay').text(data.cosplay);
+
+        $('#pronounce-gif').empty();
+        $('#pronounce-gif').text(data.gif);
     });
 });

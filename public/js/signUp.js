@@ -95,5 +95,5 @@ $('#signUp').on('click', function(event) {
     $('#cosplay').val('');
     $('#gif').val('');
 
-    window.location.replace("/profile/:id");
+    window.location.replace('/profile/:id');
 });
