@@ -39,11 +39,6 @@ function fandoms() {
     return JSON.stringify(fandom);
 }
 
-//in this file we need to add sequelize for pushing the inputted data to the existing table
-
-// The code in signUp.js handles what happens when the user clicks the "Sign Up" button.
-
-// When user clicks add-btn
 $('#signUp').on('click', function(event) {
     event.preventDefault();
     console.log('6');
@@ -82,6 +77,8 @@ $('#signUp').on('click', function(event) {
         .then(function(newUser) {
             // Log the data we found
             console.log(newUser, '2');
+            console.log(`bout to redirect to /profile/${newUser.id}`)
+            window.location.assign(`/profile/${newUser.id}`);
         });
 
     // Empty each input box by replacing the value with an empty string
@@ -90,10 +87,5 @@ $('#signUp').on('click', function(event) {
     $('#email').val('');
     $('#password').val('');
     $('#fandoms').val('');
-    $('#relationship').val('');
-    $('#dadJoke').val('');
     $('#cosplay').val('');
-    $('#gif').val('');
-
-    window.location.replace('/profile/:id');
 });

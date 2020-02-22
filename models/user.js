@@ -6,12 +6,10 @@ module.exports = function(sequelize, DataTypes) {
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
         lastName: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
         email: {
             type: DataTypes.STRING,
@@ -24,7 +22,6 @@ module.exports = function(sequelize, DataTypes) {
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
         fandoms: {
             type: DataTypes.STRING,
