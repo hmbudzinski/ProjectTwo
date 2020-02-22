@@ -1,7 +1,20 @@
 $(document).ready(function() {
+    $.get('/api', function(data) {
+        for (var i = 0; i < data.length; i++) {
+            var profiles = [{
+                Name: data.firstName,
+                Info: data.fandoms,
+                Image: ' ',
+                contact: data.email,
+                Page: data.id
+            }];
+            console.log(profiles);
+        }
+    });
+
     $('.cards').slick({
         dots: true,
-        centerMode: true,
+        centerMode: true
     });
 });
 // $('.dropdown-trigger').dropdown();
@@ -24,7 +37,7 @@ $('.cards').slick({
             breakpoint: 600,
             settings: {
                 slidesToShow: 3,
-                centerPadding: '40px',
+                centerPadding: '40px'
             }
         },
         {
@@ -33,7 +46,7 @@ $('.cards').slick({
                 slidesToShow: 1,
                 centerMode: false,
                 fade: true,
-                cssEase: 'linear',
+                cssEase: 'linear'
             }
         }
     ]
@@ -48,7 +61,7 @@ $('.cards').on('swipe', function(event, slick, direction) {
 
 // On edge hit
 $('.cards').on('edge', function(event, slick, direction) {
-    console.log('edge was hit')
+    console.log('edge was hit');
 });
 
 // On before slide change
@@ -57,14 +70,16 @@ $('.cards').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 });
 
 $(window).resize(function() {
-    $('.js-slider').not('.slick-initialized').slick('resize');
+    $('.js-slider')
+        .not('.slick-initialized')
+        .slick('resize');
 });
 
 $(window).on('orientationchange', function() {
-    $('.js-slider').not('.slick-initialized').slick('resize');
+    $('.js-slider')
+        .not('.slick-initialized')
+        .slick('resize');
 });
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
