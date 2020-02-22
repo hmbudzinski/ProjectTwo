@@ -35,3 +35,15 @@ $(document).ready(function() {
             });
     };
 });
+
+$(document).ready(function() {
+    var homebtn = $("#homebtn");
+
+    //changed html just to get it to work, can change back after its fuctioning to look better
+    homebtn.on("click", function(event) {
+        //console works
+        console.log("click")
+        event.preventDefault();
+        window.location.replace("/");
+    });
+});
