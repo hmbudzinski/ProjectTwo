@@ -70,3 +70,16 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, options);
 });
+
+$.get('/api', function(data) {
+    for (var i = 0; i < data.length; i++) {
+        var profiles = [{
+            Name: data.firstName,
+            Info: data.fandoms,
+            Image: " ",
+            contact: data.email,
+            Page: data.id
+        }];
+        console.log(profiles);
+    }
+});
