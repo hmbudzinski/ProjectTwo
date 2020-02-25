@@ -1,10 +1,9 @@
 // Requiring our models and passport as we've configured it
-var db = require('../models');
-var passport = require('../config/passport');
+var db = require("../models");
+var passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/auth");
 
 module.exports = function(app) {
-
     //SIGNIN
     app.get("/signin", function(req, res) {
         db.User.findOne({
