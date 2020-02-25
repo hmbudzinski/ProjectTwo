@@ -1,47 +1,40 @@
-$(document).ready(function() {
-    var submitBtn = $("form.login");
-    var emailInput = $("input#email-input");
-    var passwordInput = $("input#password-input");
+// import { decodeBase64 } from "bcryptjs";
 
-    //need to do this page after the signup page is functioning
-    submitBtn.on("submit", function(event) {
+$(document).ready(function() {
+    $("form.login").on("submit", function(event) {
         console.log("submitted")
         event.preventDefault();
 
         var userData = {
-            email: emailInput.val().trim(),
-            password: passwordInput.val().trim()
+            email: $("input#email-input").val().trim(),
+            password: $("input#password-input").val().trim()
         };
-
         if (!userData.email || !userData.password) {
             return;
         }
-
-        loginUser(userData.email, userData.password);
-        emailInput.val("");
-        passwordInput.val("");
+        signInUser(userData.email, userData.password);
+        $("input#email-input").val("");
+        $("input#password-input").val("");
     });
 
-    function loginUser(email, password) {
+    function signInUser(email, password) {
         console.log(email, password);
         $.post("/api/signin", {
                 email: email,
                 password: password
-            }).then(function() {
-                window.location.replace("/profile")
+            }).then(function(data) {
+                console.log("LOGIN REQ.USER", data)
+                window.location.assign(`/profile/${data.id}`)
             })
             .catch(function(err) {
                 console.log(err);
+                alert("Incorrect Email or Password");
             });
     };
 });
 
 $(document).ready(function() {
-    var homebtn = $("#homebtn");
-
-    //changed html just to get it to work, can change back after its fuctioning to look better
-    homebtn.on("click", function(event) {
-        //console works
+    $("#homebtn").on("click", function(event) {
         console.log("click")
         event.preventDefault();
         window.location.replace("/");

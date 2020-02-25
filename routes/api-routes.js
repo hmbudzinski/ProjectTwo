@@ -4,11 +4,38 @@ var passport = require('../config/passport');
 var isAuthenticated = require('../config/middleware/auth');
 
 module.exports = function(app) {
-    console.log('IT GETS IT');
-    // Using the passport.authenticate middleware with our local strategy.
-    // If the user has valid login credentials, send them to the members page.
+    //SIGNIN
+    app.get('/signin', function(req, res) {
+        db.User.findOne({
+            where: {
+                id: req.user.dataValues.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
+    });
+
     app.post('/api/signin', passport.authenticate('local'), function(req, res) {
-        res.json(req.user);
+        console.log('api-routes call');
+        console.log(req.user.dataValues.id);
+        if (req.user) {
+            res.json(req.user);
+        } else {
+            $('.modal').open();
+            res.status(401).json(err);
+            //trying to add modal on incorrect submission
+        }
+    });
+
+    //PROFILE
+    app.get('/profile/:id', function(req, res) {
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
     });
 
     app.post('/api/profile', passport.authenticate('local'), function(req, res) {
@@ -16,7 +43,7 @@ module.exports = function(app) {
         res.json(req.user);
     });
 
-    // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+    //SIGN UP
     app.post('/api/signup', function(req, res) {
         db.User.create({
                 firstName: req.body.firstName,
@@ -31,20 +58,15 @@ module.exports = function(app) {
             })
             .then(function(response) {
                 console.log('USER ID', response.dataValues.id);
-                // res.end();
                 res.json(response.dataValues);
-                // res.redirect(`/profile/${response.dataValues.id}`);
-                // res.redirect(307, `/api/profile/${response.dataValues.id}`);
-                // res.send(response.dataValues.id)
             })
             .catch(function(err) {
                 res.status(401).json(err);
                 console.log(err);
-                `  `;
             });
     });
 
-    // Route for logging user out
+    //LOGOUT
     app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');

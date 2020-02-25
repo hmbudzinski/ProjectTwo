@@ -1,3 +1,4 @@
+console.log('hi');
 $(document).ready(function() {
     console.log('hello');
     console.log(window.location.pathname);
@@ -29,5 +30,20 @@ $(document).ready(function() {
         $('#cosplay').text(data.cosplay);
         $('#pronounce-gif').empty();
         $('#pronounce-gif').text(data.gif);
+    });
+    // This file just does a GET request to figure out which user is logged in
+    // and updates the HTML on the page
+
+    //logout works but the code above does not so it is breaking the whole code
+    $('#logout').on('click', function(event) {
+        console.log('click');
+        $.get('/logout')
+            .then(function() {
+                window.location.replace('/');
+                res.end();
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
     });
 });
