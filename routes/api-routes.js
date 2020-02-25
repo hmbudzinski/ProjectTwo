@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require('../models');
 var passport = require('../config/passport');
-var isAuthenticated = require("../config/middleware/auth");
+var isAuthenticated = require('../config/middleware/auth');
 
 module.exports = function(app) {
     console.log('IT GETS IT');
@@ -12,7 +12,7 @@ module.exports = function(app) {
     });
 
     app.post('/api/profile', passport.authenticate('local'), function(req, res) {
-        console.log("PLEASE WORK", req.user)
+        console.log('PLEASE WORK', req.user);
         res.json(req.user);
     });
 
@@ -30,7 +30,7 @@ module.exports = function(app) {
                 gif: req.body.gif
             })
             .then(function(response) {
-                console.log("USER ID", response.dataValues.id);
+                console.log('USER ID', response.dataValues.id);
                 // res.end();
                 res.json(response.dataValues);
                 // res.redirect(`/profile/${response.dataValues.id}`);
@@ -40,24 +40,25 @@ module.exports = function(app) {
             .catch(function(err) {
                 res.status(401).json(err);
                 console.log(err);
-                `  `
+                `  `;
             });
     });
 
     // Route for logging user out
-    app.get("/logout", function(req, res) {
+    app.get('/logout', function(req, res) {
         req.logout();
-        res.redirect("/");
+        res.redirect('/');
     });
 
-    //route for finding one user based off id 
-    app.get("/profile/:id", function(req, res) {
-        console.log("PARAMS", req.params.id)
+    //route for finding one user based off id
+    app.get('/api/profile/:id', function(req, res) {
+        console.log('PARAMS', req.params.id);
         db.User.findOne({
             where: {
                 id: req.params.id
             }
         }).then(function(dbUser) {
+            console.log('dbUSer', dbUser);
             res.json(dbUser);
         });
     });
