@@ -31,20 +31,16 @@ $(document).ready(function() {
   });
 });
 
-// $(document).ready(function() {
-//   var logout = $("#logout");
-
-//   //changed html just to get it to work, can change back after its fuctioning to look better
-//   logout.on("click", function(event) {
-//     //console works
-//     console.log("click");
-
-//     $.get("/logout")
-//       .then(function() {
-//         window.location.replace("/");
-//       })
-//       .catch(function(err) {
-//         console.log(err);
-//       });
-//   });
-// });
+    //logout works but the code above does not so it is breaking the whole code
+    $('#logout').on("click", function(event) {
+        console.log("click");
+        $.get('/logout')
+            .then(function() {
+                window.location.replace('/');
+                res.end();
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+    });
+});
