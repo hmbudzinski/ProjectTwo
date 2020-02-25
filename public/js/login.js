@@ -23,7 +23,6 @@ $(document).ready(function() {
                 email: email,
                 password: password
             }).then(function(data) {
-                console.log("console in login.js")
                 console.log("LOGIN REQ.USER", data)
                 window.location.assign(`/profile/${data.id}`)
             })
