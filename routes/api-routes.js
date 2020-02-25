@@ -5,18 +5,7 @@ var isAuthenticated = require("../config/middleware/auth");
 
 module.exports = function(app) {
 
-    //POST FUNCTIONS 
-    // app.post('/api/signin', passport.authenticate('local'), function(req, res) {
-    //     db.User.findOne({
-    //         where: {
-    //             email: req.body.email,
-    //         }
-    //     }).then(function(dbUser) {
-    //         res.json(dbUser);
-    //         // res.json(req.user);
-    //     });
-    // });
-
+    //SIGNIN
     app.get("/signin", function(req, res) {
         db.User.findOne({
             where: {
@@ -31,17 +20,31 @@ module.exports = function(app) {
         console.log("api-routes call");
         console.log(req.user.dataValues.id)
         if (req.user) {
-            // res.redirect(`/profile/${req.user.dataValues.id}`);
             res.json(req.user);
         } else {
+            $(".modal").open();
             res.status(401).json(err);
+            //trying to add modal on incorrect submission
         }
+    });
+
+    //PROFILE
+    app.get("/profile/:id", function(req, res) {
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
     });
 
     app.post('/api/profile', passport.authenticate('local'), function(req, res) {
         res.json(req.user);
     });
 
+
+    //SIGN UP
     app.post('/api/signup', function(req, res) {
         db.User.create({
                 firstName: req.body.firstName,
@@ -56,11 +59,7 @@ module.exports = function(app) {
             })
             .then(function(response) {
                 console.log("USER ID", response.dataValues.id);
-                // res.end();
                 res.json(response.dataValues);
-                // res.redirect(`/profile/${response.dataValues.id}`);
-                // res.redirect(307, `/api/profile/${response.dataValues.id}`);
-                // res.send(response.dataValues.id)
             })
             .catch(function(err) {
                 res.status(401).json(err);
@@ -68,21 +67,9 @@ module.exports = function(app) {
             });
     });
 
-    //GET FUNCTIONS 
-    // Route for logging user out
+    //LOGOUT
     app.get("/logout", function(req, res) {
         req.logout();
         res.redirect("/");
-    });
-
-    //route for finding one user based off id 
-    app.get("/profile/:id", function(req, res) {
-        db.User.findOne({
-            where: {
-                id: req.params.id
-            }
-        }).then(function(dbUser) {
-            res.json(dbUser);
-        });
     });
 };

@@ -34,7 +34,7 @@ module.exports = function(app) {
     });
 
     //profile page
-    app.get("/profile/:id", function(req, res) {
+    app.get("/profile/:id", isAuthenticated, function(req, res) {
         console.log("HTML PARAMS", req.params.id)
         db.User.findOne({
             where: {
@@ -44,5 +44,4 @@ module.exports = function(app) {
             res.sendFile(path.join(__dirname, "../public/profile.html"));
         })
     });
-
 };
