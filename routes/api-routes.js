@@ -4,19 +4,44 @@ var passport = require('../config/passport');
 var isAuthenticated = require("../config/middleware/auth");
 
 module.exports = function(app) {
-    console.log('IT GETS IT');
-    // Using the passport.authenticate middleware with our local strategy.
-    // If the user has valid login credentials, send them to the members page.
-    app.post('/api/signin', passport.authenticate('local'), function(req, res) {
-        res.json(req.user);
+
+    //POST FUNCTIONS 
+    // app.post('/api/signin', passport.authenticate('local'), function(req, res) {
+    //     db.User.findOne({
+    //         where: {
+    //             email: req.body.email,
+    //         }
+    //     }).then(function(dbUser) {
+    //         res.json(dbUser);
+    //         // res.json(req.user);
+    //     });
+    // });
+
+    app.get("/signin", function(req, res) {
+        db.User.findOne({
+            where: {
+                id: req.user.dataValues.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
+    });
+
+    app.post("/api/signin", passport.authenticate("local"), function(req, res) {
+        console.log("api-routes call");
+        console.log(req.user.dataValues.id)
+        if (req.user) {
+            // res.redirect(`/profile/${req.user.dataValues.id}`);
+            res.json(req.user);
+        } else {
+            res.status(401).json(err);
+        }
     });
 
     app.post('/api/profile', passport.authenticate('local'), function(req, res) {
-        console.log("PLEASE WORK", req.user)
         res.json(req.user);
     });
 
-    // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
     app.post('/api/signup', function(req, res) {
         db.User.create({
                 firstName: req.body.firstName,
@@ -40,10 +65,10 @@ module.exports = function(app) {
             .catch(function(err) {
                 res.status(401).json(err);
                 console.log(err);
-                `  `
             });
     });
 
+    //GET FUNCTIONS 
     // Route for logging user out
     app.get("/logout", function(req, res) {
         req.logout();
@@ -52,7 +77,6 @@ module.exports = function(app) {
 
     //route for finding one user based off id 
     app.get("/profile/:id", function(req, res) {
-        console.log("PARAMS", req.params.id)
         db.User.findOne({
             where: {
                 id: req.params.id
