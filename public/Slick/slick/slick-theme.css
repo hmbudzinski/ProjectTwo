@@ -36,19 +36,22 @@
 
     cursor: pointer;
 
-    color: transparent;
+    color: black;
     border: none;
     outline: none;
-    background: transparent;
+    background: none;
+    
 }
 .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus
 {
-    color: transparent;
+    color: lightslategray;
     outline: none;
-    background: transparent;
+    border: none;
+    background: none;
+    
 }
 .slick-prev:hover:before,
 .slick-prev:focus:before,
@@ -71,7 +74,8 @@
     line-height: 1;
 
     opacity: .75;
-    color: white;
+    color: lightslategray;
+    background: none;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
