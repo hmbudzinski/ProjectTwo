@@ -5,46 +5,21 @@ var isAuthenticated = require("../config/middleware/auth");
 
 module.exports = function(app) {
 
-    //SIGNIN
-    app.get("/signin", function(req, res) {
-        db.User.findOne({
-            where: {
-                id: req.user.dataValues.id
-            }
-        }).then(function(dbUser) {
-            res.json(dbUser);
-        });
-    });
-
     app.post("/api/signin", passport.authenticate("local"), function(req, res) {
-        console.log("api-routes call");
         console.log(req.user.dataValues.id)
         if (req.user) {
             res.json(req.user);
         } else {
-            $(".modal").open();
+            // $(".modal").open();
             res.status(401).json(err);
             //trying to add modal on incorrect submission
         }
-    });
-
-    //PROFILE
-    app.get("/profile/:id", function(req, res) {
-        db.User.findOne({
-            where: {
-                id: req.params.id
-            }
-        }).then(function(dbUser) {
-            res.json(dbUser);
-        });
     });
 
     app.post('/api/profile', passport.authenticate('local'), function(req, res) {
         res.json(req.user);
     });
 
-
-    //SIGN UP
     app.post('/api/signup', function(req, res) {
         db.User.create({
                 firstName: req.body.firstName,
@@ -67,9 +42,28 @@ module.exports = function(app) {
             });
     });
 
-    //LOGOUT
     app.get("/logout", function(req, res) {
         req.logout();
         res.redirect("/");
+    });
+
+    app.get("/signin", function(req, res) {
+        db.User.findOne({
+            where: {
+                id: req.user.dataValues.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
+    });
+
+    app.get("/profile/:id", function(req, res) {
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
     });
 };

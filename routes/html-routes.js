@@ -23,7 +23,7 @@ module.exports = function(app) {
     //sign up page 
     app.get("/signup", function(req, res) {
         if (req.user) {
-            res.redirect('/profile/:id');
+            res.redirect(`/profile/${req.user.id}`);
         }
         res.sendFile(path.join(__dirname, "../public/signup.html"));
     });
@@ -34,7 +34,7 @@ module.exports = function(app) {
     });
 
     //profile page
-    app.get("/profile/:id", isAuthenticated, function(req, res) {
+    app.get("/profile/:id", function(req, res) {
         console.log("HTML PARAMS", req.params.id)
         db.User.findOne({
             where: {
