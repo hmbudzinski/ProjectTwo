@@ -28,7 +28,8 @@ $(document).ready(function() {
             })
             .catch(function(err) {
                 console.log(err);
-                alert("Incorrect Email or Password");
+                alert('Incorrect Email or Password')
+
             });
     };
 });
