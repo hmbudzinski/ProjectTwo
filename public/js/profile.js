@@ -6,29 +6,29 @@ $(document).ready(function() {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     $.get(url, function(data) {
-        $('#first-name').empty();
-        $('#first-name').text(data.firstName);
+        $('#first-name').append(data.firstName);
+        $('#first-name').css({ 'font-size': '225%', color: 'white' });
 
-        $('#last-name').empty();
-        $('#last-name').text(data.lastName);
+        $('#last-name').append(data.lastName);
+        $('#last-name').css({ 'font-size': '225%', color: 'white' });
 
-        $('#email').empty();
-        $('#email').text(data.email);
+        $('#email').append(data.email);
+        $('#email').css({ 'font-size': '225%', color: 'white' });
 
-        $('#fandom').empty();
-        $('#fandom').text(data.fandoms);
+        $('#fandom').append(JSON.stringify(data.fandoms));
+        $('#fandom').css({ 'font-size': '225%', color: 'white' });
 
-        $('#relationship').empty();
-        $('#relationship').text(data.relationship);
+        $('#relationship').append(data.relationship);
+        $('#relationship').css({ 'font-size': '225%', color: 'white' });
 
-        $('#dad-joke').empty();
-        $('#dad-joke').text(data.dadJoke);
+        $('#dad-joke').append(data.dadJoke);
+        $('#dad-joke').css({ 'font-size': '225%', color: 'white' });
 
-        $('#cosplay').empty();
-        $('#cosplay').text(data.cosplay);
+        $('#cosplay').append(data.cosplay);
+        $('#cosplay').css({ 'font-size': '225%', color: 'white' });
 
-        $('#pronounce-gif').empty();
-        $('#pronounce-gif').text(data.gif);
+        $('#pronounce-gif').append(data.gif);
+        $('#pronounce-gif').css({ 'font-size': '225%', color: 'white' });
     });
 });
 
