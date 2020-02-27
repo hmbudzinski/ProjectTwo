@@ -16,12 +16,19 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
             unique: true,
             validate: {
-                isEmail: true
+                isEmail: true,
+                msg: "Must be valid email."
             }
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                len: {
+                    args: 3,
+                    msg: "Password must be at least three characters."
+                }
+            }
         },
         fandoms: {
             type: DataTypes.STRING,
