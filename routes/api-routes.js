@@ -1,9 +1,19 @@
 // Requiring our models and passport as we've configured it
-var db = require('../models');
-var passport = require('../config/passport');
+var db = require("../models");
+var passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/auth");
 
 module.exports = function(app) {
+    //SIGNIN
+    app.get("/signin", function(req, res) {
+        db.User.findOne({
+            where: {
+                id: req.user.dataValues.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
+        });
+    });
 
     app.post("/api/signin", passport.authenticate("local"), function(req, res) {
         console.log(req.user.dataValues.id)

@@ -30,8 +30,6 @@ $(document).ready(function() {
             .catch(function(err) {
                 console.log(err);
                 alert('Incorrect Email or Password')
-                    // $('.modal').modal();
-                    // instance.open();
             });
     };
 
