@@ -20,9 +20,7 @@ module.exports = function(app) {
         if (req.user) {
             res.json(req.user);
         } else {
-            // $(".modal").open();
             res.status(401).json(err);
-            //trying to add modal on incorrect submission
         }
     });
 

@@ -1,4 +1,5 @@
 // import { decodeBase64 } from "bcryptjs";
+// var instance = M.Modal.getInstance(elem);
 
 $(document).ready(function() {
     $("form.login").on("submit", function(event) {
@@ -29,14 +30,15 @@ $(document).ready(function() {
             .catch(function(err) {
                 console.log(err);
                 alert('Incorrect Email or Password')
-
             });
     };
-});
 
-$(document).ready(function() {
     $("#homebtn").on("click", function(event) {
-        console.log("click")
+        event.preventDefault();
+        window.location.replace("/");
+    });
+
+    $("#mobileHome").on("click", function(event) {
         event.preventDefault();
         window.location.replace("/");
     });
