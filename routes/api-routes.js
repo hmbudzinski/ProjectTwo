@@ -30,9 +30,7 @@ module.exports = function(app) {
     });
 
     app.post('/api/signup', function(req, res) {
-        console.log("reqAPI:" + req.body.uploadedImage);
         var location = upload(req.body.uploadedImage);
-        console.log("location:" + location);
         db.User.create({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -76,12 +74,11 @@ module.exports = function(app) {
                 id: req.params.id
             }
         }).then(function(dbUser) {
-            console.log('dbuser', dbUser);
             res.json(dbUser);
         });
     });
 
-    app.get('api/swipe', function(req, res) {
+    app.get('/api/swipe', function(req, res) {
         db.User.FindAll({
             include: [db.Post]
         }).then(function(dbProfiles) {

@@ -3,13 +3,8 @@ var AWS = require('aws-sdk');
 
 const BUCKET_NAME = 'neena.johnbritto'
 const REGION = 'us-east-2'
-const ACCESS_KEY = 'AKIAIATLRC5DMWYVH4VQ'
-const SECRET_KEY = 'tUF/kGCUgjnor11N5zFeGKlGCrc7eHoO9ubDMxrj'
-    //var filename = "assets/person-placeholder.jpg";
-
-
-
-//const fileContent = fs.readFileSync(fileName);
+const ACCESS_KEY = 'AKIAJHQS5QWGLGXXHWJA'
+const SECRET_KEY = '1FpzaEfmb1ydWtF6ZMSK3rWqnKdr0ehTUaFjwTx6'
 
 AWS.config.update({
     accessKeyId: ACCESS_KEY,
@@ -18,8 +13,6 @@ AWS.config.update({
 });
 
 var s3 = new AWS.S3()
-
-
 
 // Uploading files to the bucket
 function upload(image) {
@@ -43,26 +36,22 @@ function upload(image) {
         }
         console.log(`File uploaded successfully1. ${data.Location}`);
         // fileLocation = data.Location;
-
     });
     console.log(`File uploaded successfully2. ${fileLocation}`);
     fileLocation = `https://s3.us-east-2.amazonaws.com/${params.Bucket}/${params.Key}`;
     return fileLocation;
     // https://s3.us-east-2.amazonaws.com/neena.johnbritto/image1582698214475.jpg
-
-
 }
 
+// function download(image) {
+//     s3.getObject({ Bucket: BUCKET_NAME, Key: image },
+//         function(error, data) {
+//             if (error != null) {
+//                 alert("Failed to retrieve an object: " + error);
+//             } else {
+//                 alert("Loaded " + data.ContentLength + " bytes");
+//             }
+//         }
+//     );
 
-function download(image) {
-    s3.getObject({ Bucket: BUCKET_NAME, Key: image },
-        function(error, data) {
-            if (error != null) {
-                alert("Failed to retrieve an object: " + error);
-            } else {
-                alert("Loaded " + data.ContentLength + " bytes");
-            }
-        }
-    );
-
-    module.exports = upload;
+module.exports = upload;
