@@ -2,6 +2,7 @@
 var db = require('../models');
 var passport = require('../config/passport');
 var isAuthenticated = require('../config/middleware/auth');
+var upload = require("../services/image-upload");
 
 module.exports = function(app) {
     //SIGNIN
@@ -29,6 +30,9 @@ module.exports = function(app) {
     });
 
     app.post('/api/signup', function(req, res) {
+        console.log("reqAPI:" + req.body.uploadedImage);
+        var location = upload(req.body.uploadedImage);
+        console.log("location:" + location);
         db.User.create({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -38,7 +42,8 @@ module.exports = function(app) {
                 relationship: req.body.relationship,
                 dadJoke: req.body.dadJoke,
                 cosplay: req.body.cosplay,
-                gif: req.body.gif
+                gif: req.body.gif,
+                userImage: location
             })
             .then(function(response) {
                 console.log('USER ID', response.dataValues.id);
