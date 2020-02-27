@@ -2,6 +2,7 @@
 var db = require('../models');
 var passport = require('../config/passport');
 var isAuthenticated = require('../config/middleware/auth');
+var upload = require("../services/image-upload");
 
 module.exports = function(app) {
     //SIGNIN
@@ -20,9 +21,7 @@ module.exports = function(app) {
         if (req.user) {
             res.json(req.user);
         } else {
-            // $(".modal").open();
             res.status(401).json(err);
-            //trying to add modal on incorrect submission
         }
     });
 
@@ -31,6 +30,7 @@ module.exports = function(app) {
     });
 
     app.post('/api/signup', function(req, res) {
+        var location = upload(req.body.uploadedImage);
         db.User.create({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -40,7 +40,8 @@ module.exports = function(app) {
                 relationship: req.body.relationship,
                 dadJoke: req.body.dadJoke,
                 cosplay: req.body.cosplay,
-                gif: req.body.gif
+                gif: req.body.gif,
+                userImage: location
             })
             .then(function(response) {
                 console.log('USER ID', response.dataValues.id);
@@ -73,12 +74,11 @@ module.exports = function(app) {
                 id: req.params.id
             }
         }).then(function(dbUser) {
-            console.log('dbuser', dbUser);
             res.json(dbUser);
         });
     });
 
-    app.get('api/swipe', function(req, res) {
+    app.get('/api/swipe', function(req, res) {
         db.User.FindAll({
             include: [db.Post]
         }).then(function(dbProfiles) {

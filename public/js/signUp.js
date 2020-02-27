@@ -1,9 +1,12 @@
 $(document).ready(function() {
     $('select').formSelect();
-    console.log('5');
+    var fileName = null;
+    $('input[type="file"]').change(function(e) {
+        fileName = e.target.files[0];
+        console.log(fileName);
+    });
 });
 
-// $(`input[name=${this.name}]:checked`).val()
 
 function group1() {
     var g1 = $('input[name=group1]:checked');
@@ -31,17 +34,34 @@ function group3() {
 
 function fandoms() {
     var fandom = $('#fandom').val();
-    // var fandomDataName = $(fandom).data('name');
     console.log('fandom', fandom);
-    // console.log('fandomDataName', $('#fandom').data('name'));
-    // dont forget to Parse!! on front end
-    // stringify to avoid validation error
     return JSON.stringify(fandom);
 }
 
 $('#signUp').on('click', function(event) {
     event.preventDefault();
     console.log('6');
+
+    var uploadedImage;
+
+    var file = document.querySelector('#file-input').files[0];
+    console.log("file:::" + file)
+    var reader = new FileReader();
+    if (file) {
+        // reader.readAsDataURL(file);
+        // console.log(reader, "READER");
+        // reader.onload = function() {
+        //     console.log(reader.result);
+        //     uploadedImage = reader.result;
+        //     console.log("image Uploaded:" + uploadedImage);
+        //     return uploadedImage;
+        // };
+        uploadedImage = URL.createObjectURL(file);
+    } else {
+        uploadedImage = URL.createObjectURL("assets/person-placeholder.jpg");
+
+    }
+    console.log("uploadedImage:" + uploadedImage);
 
     var relationship = group1();
     var dadJoke = group2();
@@ -68,7 +88,8 @@ $('#signUp').on('click', function(event) {
         cosplay: $('#cosplay')
             .val()
             .trim(),
-        gif: gif
+        gif: gif,
+        uploadedImage: uploadedImage
     };
 
     // Send an AJAX POST-request with jQuery
@@ -88,4 +109,9 @@ $('#signUp').on('click', function(event) {
     $('#password').val('');
     $('#fandoms').val('');
     $('#cosplay').val('');
+
+    $("#homebutton").on("click", function(event) {
+        event.preventDefault();
+        window.location.replace("/");
+    });
 });
