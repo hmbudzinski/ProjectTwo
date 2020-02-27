@@ -115,4 +115,9 @@ $('#signUp').on('click', function(event) {
     $('#password').val('');
     $('#fandoms').val('');
     $('#cosplay').val('');
+
+    $("#homebutton").on("click", function(event) {
+        event.preventDefault();
+        window.location.replace("/");
+    });
 });
