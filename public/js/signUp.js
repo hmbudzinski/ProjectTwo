@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $('select').formSelect();
-    console.log('5');
     var fileName = null;
     $('input[type="file"]').change(function(e) {
         fileName = e.target.files[0];
@@ -8,7 +7,6 @@ $(document).ready(function() {
     });
 });
 
-// $(`input[name=${this.name}]:checked`).val()
 
 function group1() {
     var g1 = $('input[name=group1]:checked');
@@ -36,11 +34,7 @@ function group3() {
 
 function fandoms() {
     var fandom = $('#fandom').val();
-    // var fandomDataName = $(fandom).data('name');
     console.log('fandom', fandom);
-    // console.log('fandomDataName', $('#fandom').data('name'));
-    // dont forget to Parse!! on front end
-    // stringify to avoid validation error
     return JSON.stringify(fandom);
 }
 
