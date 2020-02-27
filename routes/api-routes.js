@@ -1,11 +1,11 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
-var isAuthenticated = require("../config/middleware/auth");
+var db = require('../models');
+var passport = require('../config/passport');
+var isAuthenticated = require('../config/middleware/auth');
 
 module.exports = function(app) {
     //SIGNIN
-    app.get("/signin", function(req, res) {
+    app.get('/signin', function(req, res) {
         db.User.findOne({
             where: {
                 id: req.user.dataValues.id
@@ -15,8 +15,8 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/signin", passport.authenticate("local"), function(req, res) {
-        console.log(req.user.dataValues.id)
+    app.post('/api/signin', passport.authenticate('local'), function(req, res) {
+        console.log(req.user.dataValues.id);
         if (req.user) {
             res.json(req.user);
         } else {
@@ -43,7 +43,7 @@ module.exports = function(app) {
                 gif: req.body.gif
             })
             .then(function(response) {
-                console.log("USER ID", response.dataValues.id);
+                console.log('USER ID', response.dataValues.id);
                 res.json(response.dataValues);
             })
             .catch(function(err) {
@@ -52,12 +52,12 @@ module.exports = function(app) {
             });
     });
 
-    app.get("/logout", function(req, res) {
+    app.get('/logout', function(req, res) {
         req.logout();
-        res.redirect("/");
+        res.redirect('/');
     });
 
-    app.get("/signin", function(req, res) {
+    app.get('/signin', function(req, res) {
         db.User.findOne({
             where: {
                 id: req.user.dataValues.id
@@ -67,22 +67,23 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/profile/:id", function(req, res) {
+    app.get('/api/profile/:id', function(req, res) {
         db.User.findOne({
             where: {
                 id: req.params.id
             }
         }).then(function(dbUser) {
+            console.log('dbuser', dbUser);
             res.json(dbUser);
         });
     });
 
-    app.get('api/swipe', function(req, res){
+    app.get('api/swipe', function(req, res) {
         db.User.FindAll({
             include: [db.Post]
-        }).then(function(dbProfiles){
+        }).then(function(dbProfiles) {
             res.json(dbProfiles);
-        })
+        });
     });
 
     // app.post("/api/swipe", function(req, res) {
@@ -90,5 +91,4 @@ module.exports = function(app) {
     //         res.json(dbProfiles);
     //     });
     // });
-
 };
