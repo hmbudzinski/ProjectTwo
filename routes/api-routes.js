@@ -76,4 +76,19 @@ module.exports = function(app) {
             res.json(dbUser);
         });
     });
+
+    app.get('api/swipe', function(req, res){
+        db.User.FindAll({
+            include: [db.Post]
+        }).then(function(dbProfiles){
+            res.json(dbProfiles);
+        })
+    });
+
+    // app.post("/api/swipe", function(req, res) {
+    //     db.User.create(req.body).then(function(dbProfiles) {
+    //         res.json(dbProfiles);
+    //     });
+    // });
+
 };
