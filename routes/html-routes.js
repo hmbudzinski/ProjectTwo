@@ -29,9 +29,11 @@ module.exports = function(app) {
     });
 
     //swipe page
-    app.get("/swipe", isAuthenticated, function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/swipe.html"));
-    });
+    app.get("/swipe", //isAuthenticated,
+        function(req, res) {
+            res.render("swipe");
+            // res.sendFile(path.join(__dirname, "../views/swipe.handlebars"));
+        });
 
     //profile page
     app.get("/profile/:id", function(req, res) {
