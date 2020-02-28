@@ -1,89 +1,52 @@
-# Group Project 1: Nerdify!
+# Group Project 2: Nerdify!
 
 ### Hayley, Sydney, Rossi, Mel and Neena 
 
 ## Link To Application
 
-insert link
-[Dessert Search App](https://hmbudzinski.github.io/)
+insert link for Heroku
+[Project Two Github]( https://hmbudzinski.github.io/ProjectTwo/.)
 
 ## User Story
 
-As a dessert lover
+As a person who enjoys nerdy activities
 
-I can search for dessert keywords
+I want to be able to find other people who enjoy nerdy activities
 
-So that I can satisfy my craving
+So that I can do those nerdy activities with them! 
 
 ## Overview
 
-For our first group project we were asked to come together as a team to solve a
-real world problem using data from multiple server-side API requests.
+For our second group project we were asked to come together as a team to create a working application that can push to and pull from a databse. 
 
 ### Goals:
 
 - Work together as a group
-- Create a functional app to search for dessert recipes
-- Navigate the murky waters of a shared GitHub repo
+- Create a functional app to find friends
+- Learn new technoligies and utilize them in the app 
 
-### Kanban
+### New Tecnhologies 
 
-After the start of the project it quickly became apperant that each member of
-the team liked to have a clear idea of which step they should be working on
-next. Kanban, being built into GitHub, came in as a great tool for us. We worked
-together to break down the project into simple steps, and moved the steps from our
-personal to-do lists into the "done" bucket.
+For our new tech on this app we chose to work with Passport for authentication, Slick for the carousel, handlebars for structuring the carousel, and AWS for uploading images.
 
-### Two Server-Side APIs
+### CSS Framework: Materialize
 
-We chose to work with Edamam and Spoonacular for the first time.
+A couple of our team members used Materialized on their first project but did not get much exposure to it as they were on the backend teams, therefore we decided to use it again in this project so everyoe could fully understand and be exposed to it. Similarly to Bootstrap, the documentation for Materialize is easy to maneuver in terms of finding what we needed, but it was a bit more difficult when it came to structuring the full html and styling.
 
-Edamam provided us with a json object to manipulate that allowed us to display
-the recipe title, image, and link. With each user search we were able to limit
-the search to three responses, as well as limit by vegan desserts, peanut free
-desserts, and tree nut free desserts.
+### Strengths and Difficulties 
 
-As happy as desserts make everyone, we knew we needed to bring more joy to the
-world. That's where Spoonacular's Get A Random Food Joke came in. Caution: user 
-discretion is advised!
+Our team worked very well together and listened to eachothers ideas and input throughout the whole project. The ability to do this made for smooth sailing when it came to task delegation and making decisions. 
 
-### CSS Framework: Skeleton
+We struggled with debugging on this project, it felt like when we fixed one thing another thing would break, but we were able to come together in the end to get it done. 
 
-The team loved working in Skeleton. Unlike Bootstrap, the documentation for
-Skeleton was easily digestable, and it's file is cleanly written and simple
-to look at and understand. We were still able to create a responsive and great
-layout, while giving us the space to explore our own design styles.
+### Future Goals 
 
-### New Third-Party API
-
-Once the project had started to really take shape, the team knew we needed
-something to create a more beautifully interactive application. With the use of
-Jquery UI we were able to add some really exciting features.
-
-- Predictive search Using the Cupcake Ipsum's array of delicious dessert
-  options, we implimented the ability to choose from a list of suggested search
-  terms after the user begins typing. We added to the array to make it even more
-  accessible, and styled the drop down to fit with the rest of our page's
-  styling
-
-- An effect called Shake was added to the div container for the jokes. Upon clicking 
-  it the div "shakes" and presents a new joke on the screen
-
-- Hide and Effect used to dynamically display divs on the page, and have them shift
-  up after the first search
+In the future of this project, we would like to add the function of being able to message users you match with, be able to save users you match with, be able to view other users profiles from the swipe page, and be able to filter by specific attributes on the swipe page. We would also like to potentially add a romantic side to the app that makes it more of a dating site, add geolocation so users only see those in a certain amount of distance from them, and add the function of the user being able to post status updates, similarly to a blog, so then when you view a users page you can see their posts as well. 
 
 ## Attribution
 
-- Edamam Recipe generator powered by [Edamam](https://www.edamam.com/).
+- Materialize found at [Materialize](https://materializecss.com/).
 
-- Spoonacular found at [Spoonacular](https://spoonacular.com/food-api).
-
-- Skeleton found at [Skeleton](http://getskeleton.com/).
-
-- Font Awesome Cookie Bite icon used with permission from
+- Font Awesome icon used with permission from
   [Font Awesome](https://fontawesome.com/), under Attribution 4.0 International
   (CC by 4.0). No changes were made to this image.
-
-- Jquery UI Third Party API found at [Jquery UI](https://jqueryui.com/).
-
-- Cupcake Ipsum Ipsum generator found at [Cupcake Ipsum](cupcakeipsum.com/).
