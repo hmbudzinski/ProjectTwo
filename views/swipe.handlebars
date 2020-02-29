@@ -5,8 +5,8 @@
             <a id="logo-container" href="#" class="brand-logo">Logo</a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                 <a href="#" id="yourProfile" class="btn-large waves-effect waves-light teal lighten-1">Your Profile</a>
-                 <a href="#" id="homeBTN" class="btn-large waves-effect waves-light teal lighten-1">Home</a>
+                 <a href="/profile" id="yourProfile" class="btn-large waves-effect waves-light teal lighten-1">Your Profile</a>
+                 <a href="/profile/:id" id="homeBTN" class="btn-large waves-effect waves-light teal lighten-1">Home</a>
                 </li>
         </ul>
         <ul id="nav-mobile" class="sidenav">
@@ -17,7 +17,7 @@
       </div>
     </nav>
 
-    <div class="wrapper">
+     <div class="wrapper">
         <div class="cards">
 
             {{#each profiles}}
@@ -28,32 +28,28 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4" id="name">{{firstName}}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">{{id}}</a></p>
-                    <p><button id="contact">{{email}}</button></p>
+                    <p><a id="page" href="/profile/:{{id}}">Visit Their Page</a></p>
+                    <h5><i class="material-icons">mail</i> {{email}}</h5>
+                    
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">About Them:<i class="material-icons right">close</i></span>
-                    <p>Fandoms: {{fandoms}}</p>
-                    <p>{{gif}}</p>
-                    <p>Dad Joke: {{dadJoke}}</p>
+                    <span class="card-title grey-text text-darken-4">About Them:</span>
+                    <h5>Fandoms: {{fandoms}}</h5>
+                    <h5>{{gif}}</h5><br>
+                    {{!-- <h5>Dad Joke: {{dadJoke}}</h5> --}}
                 </div>
             </div>
             {{/each}}
         </div>
     </div>
-    <footer class="page-footer amber-lighten-4">
+
+     <footer class="page-footer amber-lighten-4">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                    </ul>
+                    <h5 class="white-text">Made by:</h5>
+                    <p class="grey-text text-lighten-4">Hayley Budzinski, Mel Garza, Neena John Britto, Rozzie Killingstad,
+                        and Sydney Preston</p>
                 </div>
             </div>
         </div>
