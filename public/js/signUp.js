@@ -7,7 +7,6 @@ $(document).ready(function() {
     // });
 });
 
-
 function group1() {
     var g1 = $('input[name=group1]:checked');
     var g1DataName = $(g1).data('name');
@@ -43,7 +42,6 @@ $('#signUp').on('click', function(event) {
     console.log('6');
 
     // var uploadedImage;
-
     // var file = document.querySelector('#file-input').files[0];
     // console.log("file:::" + file)
     // var reader = new FileReader();
@@ -98,7 +96,7 @@ $('#signUp').on('click', function(event) {
         .then(function(newUser) {
             // Log the data we found
             console.log(newUser, '2');
-            console.log(`bout to redirect to /profile/${newUser.id}`)
+            console.log(`bout to redirect to /profile/${newUser.id}`);
             window.location.assign(`/profile/${newUser.id}`);
         });
 
@@ -110,8 +108,8 @@ $('#signUp').on('click', function(event) {
     $('#fandoms').val('');
     $('#cosplay').val('');
 
-    $("#homebutton").on("click", function(event) {
+    $('#homebutton').on('click', function(event) {
         event.preventDefault();
-        window.location.replace("/");
+        window.location.replace('/');
     });
 });

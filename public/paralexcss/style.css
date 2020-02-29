@@ -49,9 +49,19 @@ p {
 }
 
 .profileContainer {
+    size: 80%;
     background-color: rgba(253, 62, 158, 0.6);
     padding: 10px;
     margin-bottom: 80px;
+    position: fixed;
+}
+
+.row .col.l9 {
+    background-color: rgba(253, 62, 158, 0.6);
+    padding: 50px, 100px, 50px, 100px;
+    margin-bottom: 80px;
+    position: absolute;
+    left: 170px;
 }
 
 .input-field.col label {
@@ -74,7 +84,7 @@ p {
     color: white;
 }
 
-#fandom {
+#fandom1 {
     color: black !important;
 }
 
@@ -95,6 +105,10 @@ p {
 }
 
 .select-wrapper input.select-dropdown {
+    color: white;
+}
+
+#fandom {
     color: white;
 }
 
