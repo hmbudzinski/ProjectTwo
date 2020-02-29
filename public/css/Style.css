@@ -1,0 +1,22 @@
+.container {
+  margin: 0px;
+  display: inline;
+}
+
+.responsive-img {
+  position: relative;
+}
+
+.signIn {
+  position: absolute;
+  top: 350px;
+}
+
+.card-content {
+  height: 300px;
+  width: 1460px;
+}
+
+#logo-container {
+  color: #444;
+}
