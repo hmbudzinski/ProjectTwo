@@ -1,319 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 2</title>
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      href="/paralexcss/materialize.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
-    <link
-      href="/paralexcss/style.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
-    <link
-      href="/css/Style.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
-  </head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="/paralexcss/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/paralexcss/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/css/Style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
 
-  <body>
+<body>
     <nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <a
-              href="#"
-              id="homebtn"
-              class="btn-large waves-effect waves-light teal lighten-1"
-              >Home</a
-            >
-          </li>
-        </ul>
-        <ul id="nav-mobile" class="sidenav">
-          <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
-      </div>
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#" id="homebtn" class="btn-large waves-effect waves-light teal lighten-1">Home</a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
     </nav>
 
     <div id="index-banner" class="parallax-container">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <br /><br />
-          <h1 class="header center amber-text text-lighten-2">Nerds Unite</h1>
-          <div class="row center">
-            <h5 class="header col s12 light">
-              Sign Up for an Account!
-            </h5>
-          </div>
-          <div class="content-container">
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate" />
-                    <label for="first_name">First Name</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate" />
-                    <label for="last_name">Last Name</label>
-                  </div>
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br /><br />
+                <h1 class="header center amber-text text-lighten-2">Nerds Unite</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">
+                        Sign Up for an Account!
+                    </h5>
                 </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="email" type="email" class="validate" />
-                    <label for="email">Email</label>
-                  </div>
-                  <div class="input-field col s12">
-                    <input id="password" type="password" class="validate" />
-                    <label for="password">Password</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12 black-text">
-                    <!-- <select id="fandom"> -->
-                    <select id="fandom" multiple>
-                      <option value="" disabled-selected>Choose three</option>
-                      <option value="Adventure Time">Adventure Time</option>
-                      <option value="Attack on Titan">Attack on Titan</option>
-                      <option value="Avatar: The Last Airbender"
-                        >Avatar: The Last Airbender</option
-                      >
-                      <option value="DC Comics">DC Comics</option>
-                      <option value="Death Note">Death Note</option>
-                      <option value="Disney Films">Disney Films</option>
-                      <option value="Doctor Who">Doctor Who</option>
-                      <option value="Futurama">Futurama</option>
-                      <option value="Game of Thrones">Game of Thrones</option>
-                      <option value="Harry Potter">Harry Potter</option>
-                      <option value="Legend of Zelda">Legend of Zelda</option>
-                      <option value="Lord of the Rings"
-                        >Lord of the Rings</option
-                      >
-                      <option value="Marvel Comics">Marvel Comics</option>
-                      <option value="Naruto">Naruto</option>
-                      <option value="Nintendo">Nintendo</option>
-                      <option value="Pokemon">Pokemon</option>
-                      <option value="Rick & Morty">Rick & Morty</option>
-                      <option value="Star Trek">Star Trek</option>
-                      <option value="Star Wars">Star Wars</option>
-                      <option value="Studio Ghibli Films"
-                        >Studio Ghibli Films</option
-                      >
-                      <option value="Tim Burton Films">Tim Burton Films</option>
-                      <option value="X-men">X-men</option>
-                    </select>
-                    <!-- </div> -->
-                    <label>Choose your favorite three Fandoms!</label>
-                  </div>
+                <div class="content-container">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="first_name" type="text" class="validate" />
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="last_name" type="text" class="validate" />
+                                    <label for="last_name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="validate" />
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="password" type="password" class="validate" />
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 black-text">
+                                    <!-- <select id="fandom"> -->
+                                    <select id="fandom1" multiple>
+                    <option value="" disabled-selected>Choose three</option>
+                    <option value="Adventure Time" class="select">Adventure Time</option>
+                    <option value="Attack on Titan" class="select">Attack on Titan</option>
+                    <option value="Avatar: The Last Airbender" class="select">Avatar: The Last Airbender</option>
+                    <option value="DC Comics" class="select">DC Comics</option>
+                    <option value="Death Note" class="select">Death Note</option>
+                    <option value="Disney Films" class="select">Disney Films</option>
+                    <option value="Doctor Who" class="select">Doctor Who</option>
+                    <option value="Futurama" class="select">Futurama</option>
+                    <option value="Game of Thrones" class="select">Game of Thrones</option>
+                    <option value="Harry Potter" class="select">Harry Potter</option>
+                    <option value="Legend of Zelda" class="select">Legend of Zelda</option>
+                    <option value="Lord of the Rings" class="select">Lord of the Rings</option>
+                    <option value="Marvel Comics" class="select">Marvel Comics</option>
+                    <option value="Naruto" class="select">Naruto</option>
+                    <option value="Nintendo" class="select">Nintendo</option>
+                    <option value="Pokemon" class="select">Pokemon</option>
+                    <option value="Rick & Morty" class="select">Rick & Morty</option>
+                    <option value="Star Trek" class="select">Star Trek</option>
+                    <option value="Star Wars" class="select">Star Wars</option>
+                    <option value="Studio Ghibli Films" class="select">Studio Ghibli Films</option>
+                    <option value="Tim Burton Films" class="select">Tim Burton Films</option>
+                    <option value="X-men" class="select">X-men</option>
+                  </select>
+                                    <label>Choose your favorite three Fandoms!</label>
+                                </div>
+                            </div>
+
+                            <div class="row" id="relationship">
+                                <p>What are you looking for?</p>
+                                <p>
+                                    <label>
+                    <input name="group1" type="radio" data-name="Bowling Buddy" checked />
+                    <span class="spanColor">Bowling Buddy</span>
+                  </label>
+                                </p>
+                                <p>
+                                    <label>
+                    <input name="group1" type="radio" data-name="Boardgame Crew" />
+                    <span class="spanColor">Boardgame Crew</span>
+                  </label>
+                                </p>
+                                <p>
+                                    <label>
+                    <input name="group1" type="radio" data-name="Cosplay Partner" />
+                    <span class="spanColor">Cosplay Partner</span>
+                  </label>
+                                </p>
+                                <p>
+                                    <label>
+                    <input name="group1" type="radio" data-name="Anime & Boba Tea" />
+                    <span class="spanColor">Anime & Boba Tea</span>
+                  </label>
+                                </p>
+                                <p>
+                                    <label>
+                    <input name="group1" type="radio" data-name="Laser Tag Partner" />
+                    <span class="spanColor">Laser Tag Partner</span>
+                  </label>
+                                </p>
+                                <p>
+                                    <label>
+                    <input name="group1" type="radio" data-name="Star Wars & Cuddle" />
+                    <span class="spanColor">Star Wars & Cuddle</span>
+                  </label>
+                                </p>
+                            </div>
+
+                            <div class="row" id="dadJoke">
+                                <p>Pick your favorite Dad Joke:</p>
+                                <p>
+                                    <label>
+                    <input name="group2" type="radio"
+                      data-name="How do you make a Kleenex dance? Put a little boogie in it!" checked />
+                    <span class="spanColor">"How do you make a Kleenex dance? Put a little boogie
+                      in it!"</span>
+                  </label>
+                                </p>
+                                <p>
+                                    <label>
+                    <input name="group2" type="radio"
+                      data-name="What time did the man go to the dentist? Tooth hurt-y." />
+                    <span class="spanColor">"What time did the man go to the dentist? Tooth
+                      hurt-y."</span>
+                  </label>
+                                </p>
+                                <p>
+                                    <label>
+                    <input name="group2" type="radio" data-name="What is Beethoven's favorite fruit? A ba-na-na-na." />
+                    <span class="spanColor">"What is Beethoven's favorite fruit? A
+                      ba-na-na-na."</span>
+                  </label>
+                                </p>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="cosplay" type="email" class="validate" />
+                                    <label for="cosplay">Favorite Character to Cosplay</label>
+                                </div>
+                            </div>
+
+                            <div class="row" id="gif">
+                                <p>How do you pronounce GIF?</p>
+                                <p>
+                                    <label>
+                    <input name="group3" type="radio" data-name="Gif (how it is supposed to be)" checked />
+                    <span class="spanColor">Gif (how it is supposed to be)</span>
+                  </label>
+                                </p>
+                                <p>
+                                    <label>
+                    <input name="group3" type="radio" data-name="Jif (like the Peanut Butter)" />
+                    <span class="spanColor">Jif (like the Peanut Butter)</span>
+                  </label>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <p id="status">Upload a Profile Photo!</p>
+                                <input type="file" id="file-input" />
+                            </div>
+
+                            <button class="btn waves-effect waves-light" type="submit" name="action" id="signUp">
+                Sign Up
+                <i class="material-icons right">send</i>
+              </button>
+                        </form>
+                    </div>
                 </div>
 
-                <div class="row" id="relationship">
-                  <p>What are you looking for?</p>
-                  <p>
-                    <label>
-                      <input
-                        name="group1"
-                        type="radio"
-                        data-name="Bowling Buddy"
-                        checked
-                      />
-                      <span class="spanColor">Bowling Buddy</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input
-                        name="group1"
-                        type="radio"
-                        data-name="Boardgame Crew"
-                      />
-                      <span class="spanColor">Boardgame Crew</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input
-                        name="group1"
-                        type="radio"
-                        data-name="Cosplay Partner"
-                      />
-                      <span class="spanColor">Cosplay Partner</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input
-                        name="group1"
-                        type="radio"
-                        data-name="Anime & Boba Tea"
-                      />
-                      <span class="spanColor">Anime & Boba Tea</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input
-                        name="group1"
-                        type="radio"
-                        data-name="Laser Tag Partner"
-                      />
-                      <span class="spanColor">Laser Tag Partner</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input
-                        name="group1"
-                        type="radio"
-                        data-name="Star Wars & Cuddle"
-                      />
-                      <span class="spanColor">Star Wars & Cuddle</span>
-                    </label>
-                  </p>
-                </div>
-
-                <div class="row" id="dadJoke">
-                  <p>Pick your favorite Dad Joke:</p>
-                  <p>
-                    <label>
-                      <input
-                        name="group2"
-                        type="radio"
-                        data-name="How do you make a Kleenex dance? Put a little boogie in it!"
-                        checked
-                      />
-                      <span class="spanColor"
-                        >"How do you make a Kleenex dance? Put a little boogie
-                        in it!"</span
-                      >
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input
-                        name="group2"
-                        type="radio"
-                        data-name="What time did the man go to the dentist? Tooth hurt-y."
-                      />
-                      <span class="spanColor"
-                        >"What time did the man go to the dentist? Tooth
-                        hurt-y."</span
-                      >
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input
-                        name="group2"
-                        type="radio"
-                        data-name="What is Beethoven's favorite fruit? A ba-na-na-na."
-                      />
-                      <span class="spanColor"
-                        >"What is Beethoven's favorite fruit? A
-                        ba-na-na-na."</span
-                      >
-                    </label>
-                  </p>
-                </div>
-
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="cosplay" type="email" class="validate" />
-                    <label for="cosplay">Favorite Character to Cosplay</label>
-                  </div>
-                </div>
-
-                <div class="row" id="gif">
-                  <p>How do you pronounce GIF?</p>
-                  <p>
-                    <label>
-                      <input
-                        name="group3"
-                        type="radio"
-                        data-name="Gif (how it is supposed to be)"
-                        checked
-                      />
-                      <span class="spanColor"
-                        >Gif (how it is supposed to be)</span
-                      >
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input
-                        name="group3"
-                        type="radio"
-                        data-name="Jif (like the Peanut Butter)"
-                      />
-                      <span class="spanColor"
-                        >Jif (like the Peanut Butter)</span
-                      >
-                    </label>
-                  </p>
-                </div>
-                <div class="row">
-                  <p id="status">Upload a Profile Photo!</p>
-                  <input type="file" id="file-input" />
-                </div>
-
-                <button
-                  class="btn waves-effect waves-light"
-                  type="submit"
-                  name="action"
-                  id="signUp"
-                >
-                  Sign Up
-                  <i class="material-icons right">send</i>
-                </button>
-              </form>
+                <br /><br />
             </div>
-          </div>
-
-          <br /><br />
         </div>
-      </div>
 
-      <div class="parallax">
-        <img
-          src="assets/neon-background2.jpg"
-          class="responsive-img"
-          alt="Unsplashed background img 3"
-        />
-      </div>
+        <div class="parallax">
+            <img src="assets/neon-background2.jpg" class="responsive-img" alt="Unsplashed background img 3" />
+        </div>
     </div>
 
     <footer class="page-footer amber-lighten-4">
-      <div class="container"></div>
-      <div class="footer-copyright">
-        <div class="container">
-          Made by:
-          <a class="brown-text text-lighten-3"
-            >Hayley Budzinski, Mel Garza, Neena John Britto, Rozzie Killingstad,
-            and Sydney Preston.</a
-          >
+        <div class="container"></div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by:
+                <a class="brown-text text-lighten-3">Hayley Budzinski, Mel Garza, Neena John Britto, Rozzie Killingstad,
+          and Sydney Preston.</a>
+            </div>
         </div>
-      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -324,5 +224,6 @@
     <script src="/paralexjs/materialize.js"></script>
     <script src="/paralexjs/init.js"></script>
     <script src="/js/signUp.js"></script>
-  </body>
+</body>
+
 </html>

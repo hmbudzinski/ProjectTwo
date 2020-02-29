@@ -1,5 +1,7 @@
 $(document).ready(function() {
     $('select').formSelect();
+    // validate();
+
     var fileName = null;
     $('input[type="file"]').change(function(e) {
         fileName = e.target.files[0];
@@ -7,6 +9,21 @@ $(document).ready(function() {
     });
 });
 
+// function validate() {
+//     var selectChoose = document.getElementById('fandom');
+//     var maxOptions = 3;
+//     var optionCount = 0;
+//     for (var i = 0; i < selectChoose.length; i++) {
+//         if (selectChoose[i].selected) {
+//             optionCount++;
+//             if (optionCount > maxOptions) {
+//                 alert('validation failed, not submitting');
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+// }
 
 function group1() {
     var g1 = $('input[name=group1]:checked');
@@ -45,7 +62,7 @@ $('#signUp').on('click', function(event) {
     var uploadedImage;
 
     var file = document.querySelector('#file-input').files[0];
-    console.log("file:::" + file)
+    console.log('file:::' + file);
     var reader = new FileReader();
     if (file) {
         // reader.readAsDataURL(file);
@@ -58,10 +75,9 @@ $('#signUp').on('click', function(event) {
         // };
         uploadedImage = URL.createObjectURL(file);
     } else {
-        uploadedImage = URL.createObjectURL("assets/person-placeholder.jpg");
-
+        uploadedImage = URL.createObjectURL('assets/person-placeholder.jpg');
     }
-    console.log("uploadedImage:" + uploadedImage);
+    console.log('uploadedImage:' + uploadedImage);
 
     var relationship = group1();
     var dadJoke = group2();
@@ -98,7 +114,7 @@ $('#signUp').on('click', function(event) {
         .then(function(newUser) {
             // Log the data we found
             console.log(newUser, '2');
-            console.log(`bout to redirect to /profile/${newUser.id}`)
+            console.log(`bout to redirect to /profile/${newUser.id}`);
             window.location.assign(`/profile/${newUser.id}`);
         });
 
@@ -110,8 +126,8 @@ $('#signUp').on('click', function(event) {
     $('#fandoms').val('');
     $('#cosplay').val('');
 
-    $("#homebutton").on("click", function(event) {
+    $('#homebutton').on('click', function(event) {
         event.preventDefault();
-        window.location.replace("/");
+        window.location.replace('/');
     });
 });
