@@ -46,10 +46,11 @@ module.exports = function(sequelize, DataTypes) {
         gif: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        userImage: {
-            type: DataTypes.STRING
         }
+        // ,
+        // userImage: {
+        //     type: DataTypes.STRING
+        // }
     });
 
     User.prototype.validPassword = function(password) {

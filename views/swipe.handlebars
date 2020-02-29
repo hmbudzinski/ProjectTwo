@@ -1,113 +1,55 @@
 
-<body>
 
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="signin.html" class="brand-logo">Logo</a>
-            <!-- <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Menu</a>
-            <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="signin.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="#!"><i class="material-icons">view_module</i></a>>Matches</a>
+            <a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                 <a href="#" id="yourProfile" class="btn-large waves-effect waves-light teal lighten-1">Your Profile</a>
+                 <a href="#" id="homeBTN" class="btn-large waves-effect waves-light teal lighten-1">Home</a>
                 </li>
-                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </div> -->
+        </ul>
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a
+        >
+      </div>
     </nav>
 
-    <div class="wrapper">
+     <div class="wrapper">
         <div class="cards">
-            <div class="card medium" id="card">
+
+            {{#each profiles}}
+                <div class="card medium">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="assets/daniel-lincoln-NR705beN_CU-unsplash.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" id="add"><i class="material-icons">add</i></a>
+                    {{!-- <a class="btn-floating halfway-fab waves-effect waves-light red" id="add"><i class="material-icons">add</i></a> --}}
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4" id="name">{{Name}}<i class="material-icons right">more_vert</i></span>
-                    <i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Go to their <page!>{{Page}}</page!></a></p>
-                    <p><button id="contact">Contact Them</button></p>
+                    <span class="card-title activator grey-text text-darken-4" id="name">{{firstName}}<i class="material-icons right">more_vert</i></span>
+                    <p><a id="page" href="/profile/:{{id}}">Visit Their Page</a></p>
+                    <h5><i class="material-icons">mail</i> {{email}}</h5>
+                    
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">About Them:<i class="material-icons right">close</i></span>
-                    <p>{{Info}}</p>
+                    <span class="card-title grey-text text-darken-4">About Them:</span>
+                    <h5>Fandoms: {{fandoms}}</h5>
+                    <h5>{{gif}}</h5><br>
+                    {{!-- <h5>Dad Joke: {{dadJoke}}</h5> --}}
                 </div>
             </div>
-            <div class="card medium" id="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="assets/marilia-castelli-JkhNE13-sXs-unsplash.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" id="add"><i class="material-icons">add</i></a>
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{Name}}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Go to their page!</a></p>
-                    <p><button id="contact">{{Contact}}</button></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">About Them:<i class="material-icons right">close</i></span>
-                    <p>{{Info}}</p>
-                </div>
-            </div>
-            <div class="card medium" id="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="assets/thomas-vitali-_qzB8j4LCrU-unsplash.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" id="add"><i class="material-icons">add</i></a>
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Insert Name<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Go to their page!</a></p>
-                    <p><button id="contact">Contact Them</button></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">About Them:<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-            <div class="card medium" id="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="assets/alex-kotliarskyi-ourQHRTE2IM-unsplash.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" id="add"><i class="material-icons">add</i></a>
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Insert Name<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Go to their page!</a></p>
-                    <p><button id="contact">Contact Them</button></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">About Them:<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-            <div class="card medium" id="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="assets/andrew-santellan-kc3AYIVIpX4-unsplash.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" id="add"><i class="material-icons">add</i></a>
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Insert Name<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Go to their page!</a></p>
-                    <p><button id="contact">Contact Them</button></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">About Them:<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
 
-    <footer class="page-footer amber-lighten-4">
+     <footer class="page-footer amber-lighten-4">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                    </ul>
+                    <h5 class="white-text">Made by:</h5>
+                    <p class="grey-text text-lighten-4">Hayley Budzinski, Mel Garza, Neena John Britto, Rozzie Killingstad,
+                        and Sydney Preston</p>
                 </div>
             </div>
         </div>
@@ -117,5 +59,3 @@
             </div>
         </div>
     </footer>
-
-</body>

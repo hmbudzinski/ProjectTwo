@@ -1,8 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require('../models');
 var passport = require('../config/passport');
-var isAuthenticated = require('../config/middleware/auth');
-var upload = require("../services/image-upload");
+// var upload = require("../services/image-upload");
 
 module.exports = function(app) {
     //SIGNIN
@@ -30,7 +29,7 @@ module.exports = function(app) {
     });
 
     app.post('/api/signup', function(req, res) {
-        var location = upload(req.body.uploadedImage);
+        // var location = upload(req.body.uploadedImage);
         db.User.create({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -41,7 +40,7 @@ module.exports = function(app) {
                 dadJoke: req.body.dadJoke,
                 cosplay: req.body.cosplay,
                 gif: req.body.gif,
-                userImage: location
+                // userImage: location
             })
             .then(function(response) {
                 console.log('USER ID', response.dataValues.id);
@@ -79,16 +78,12 @@ module.exports = function(app) {
     });
 
     app.get('/api/swipe', function(req, res) {
-        db.User.FindAll({
-            include: [db.Post]
-        }).then(function(dbProfiles) {
-            res.json(dbProfiles);
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
         });
     });
-
-    // app.post("/api/swipe", function(req, res) {
-    //     db.User.create(req.body).then(function(dbProfiles) {
-    //         res.json(dbProfiles);
-    //     });
-    // });
 };
