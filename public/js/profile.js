@@ -31,7 +31,7 @@ $(document).ready(function() {
     });
 });
 
-$('#logout').on('click', function(event) {
+$('#logout').on('click', function(req, res) {
     console.log('click');
     $.get('/logout')
         .then(function() {
