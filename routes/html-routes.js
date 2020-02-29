@@ -10,31 +10,38 @@ module.exports = function(app) {
 
     //sign in page
     app.get("/signin", function(req, res) {
-        // If the user has an account send them to the profile page
         console.log("made it to HTML route");
         if (req.user) {
+            console.log("REQ USER ID", req.user.id)
             res.redirect(`/profile/${req.user.id}`);
         }
-        //otherwise send them to the signin page
         res.sendFile(path.join(__dirname, "../public/signin.html"));
     });
 
     //sign up page
     app.get("/signup", function(req, res) {
         if (req.user) {
+            console.log(req.user.id)
             res.redirect(`/profile/${req.user.id}`);
         }
         res.sendFile(path.join(__dirname, "../public/signup.html"));
     });
 
     //swipe page
-    app.get(
-        "/swipe", //isAuthenticated,
+    app.get("/swipe",
         function(req, res) {
-            res.render("swipe");
-            res.sendFile(path.join(__dirname, "../views/swipe.handlebars"));
-        }
-    );
+            db.User.findAll().then(function(data) {
+                console.log("data", data);
+                const profiles = [];
+                for (let i = 0; i < data.length; i++) {
+                    const userData = data[i].dataValues;
+                    profiles.push(userData);
+                }
+                res.render('swipe', {
+                    profiles
+                })
+            })
+        });
 
     //profile page
     app.get("/profile/:id", isAuthenticated, function(req, res) {
