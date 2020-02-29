@@ -86,9 +86,9 @@ module.exports = function(app) {
         });
     });
 
-    // app.post("/api/swipe", function(req, res) {
-    //     db.User.create(req.body).then(function(dbProfiles) {
-    //         res.json(dbProfiles);
-    //     });
-    // });
+    app.post("/api/swipe", function(req, res) {
+        db.User.create(req.body).then(function(dbProfiles) {
+            res.json(dbProfiles);
+        });
+    });
 };
