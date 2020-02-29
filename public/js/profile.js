@@ -3,8 +3,7 @@ $(document).ready(function() {
     console.log('hello');
     console.log(window.location.pathname);
     var url = '/api' + window.location.pathname;
-    // This file just does a GET request to figure out which user is logged in
-    // and updates the HTML on the page
+
     $.get(url, function(data) {
         $('#first-name').append(data.firstName);
         $('#first-name').css({ 'font-size': '225%', color: 'white' });
@@ -32,16 +31,28 @@ $(document).ready(function() {
     });
 });
 
-//logout works but the code above does not so it is breaking the whole code
 $('#logout').on('click', function(event) {
     console.log('click');
     $.get('/logout')
         .then(function() {
             window.location.replace('/');
-            res.end();
+            req.logout();
+            // res.end();
         })
         .catch(function(err) {
             console.log(err);
         });
 });
-// });
+
+$('#swipe').on('click', function(event) {
+    console.log('click');
+    $.get('/swipe')
+        .then(function() {
+            window.location.replace('/');
+            req.logout();
+            // res.end();
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+});

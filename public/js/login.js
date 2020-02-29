@@ -1,5 +1,4 @@
 // import { decodeBase64 } from "bcryptjs";
-// var instance = M.Modal.getInstance(elem);
 
 $(document).ready(function() {
     $("form.login").on("submit", function(event) {
@@ -24,7 +23,7 @@ $(document).ready(function() {
                 email: email,
                 password: password
             }).then(function(data) {
-                console.log("LOGIN REQ.USER", data)
+                console.log("LOGIN REQ.USER", data);
                 window.location.assign(`/profile/${data.id}`)
             })
             .catch(function(err) {
