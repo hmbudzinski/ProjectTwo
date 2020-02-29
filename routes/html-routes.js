@@ -31,8 +31,8 @@ module.exports = function(app) {
     app.get(
         "/swipe", //isAuthenticated,
         function(req, res) {
-            res.render("swipe");
-            res.sendFile(path.join(__dirname, "../views/swipe.handlebars"));
+            res.render("../views/layouts/main");
+            // res.sendFile(path.join(__dirname, "../views/main.handlebars"));
         }
     );
 
