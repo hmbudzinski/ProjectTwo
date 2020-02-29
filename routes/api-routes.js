@@ -79,16 +79,12 @@ module.exports = function(app) {
     });
 
     app.get('/api/swipe', function(req, res) {
-        db.User.FindAll({
-            include: [db.Post]
-        }).then(function(dbProfiles) {
-            res.json(dbProfiles);
-        });
-    });
-
-    app.post("/api/swipe", function(req, res) {
-        db.User.create(req.body).then(function(dbProfiles) {
-            res.json(dbProfiles);
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbUser) {
+            res.json(dbUser);
         });
     });
 };
