@@ -48,8 +48,8 @@ $('#swipe').on('click', function(event) {
     console.log('click');
     $.get('/swipe')
         .then(function() {
-            window.location.replace('/');
-            req.logout();
+            window.location.replace('/swipe');
+            // req.logout();
             // res.end();
         })
         .catch(function(err) {

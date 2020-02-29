@@ -29,19 +29,19 @@ module.exports = function(app) {
 
     //swipe page
     app.get("/swipe", //isAuthenticated,
-    function(req, res) {
-        db.User.findAll().then(function(data){
-            console.log("data", data);
-            const profiles = [];
-            for (let i = 0; i < data.length; i++) {
-                const userData = data[i].dataValues;
-                profiles.push(userData);
-            }
-            res.render('swipe', {
-                profiles
+        function(req, res) {
+            db.User.findAll().then(function(data) {
+                console.log("data", data);
+                const profiles = [];
+                for (let i = 0; i < data.length; i++) {
+                    const userData = data[i].dataValues;
+                    profiles.push(userData);
+                }
+                res.render('swipe', {
+                    profiles
+                })
             })
-        })
-    });
+        });
 
     //profile page
     app.get("/profile/:id", isAuthenticated, function(req, res) {
